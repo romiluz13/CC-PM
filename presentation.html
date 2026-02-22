@@ -204,7 +204,7 @@ html, body {
 }
 
 .slide-title-text {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   color: var(--white);
   letter-spacing: -0.01em;
@@ -217,25 +217,23 @@ html, body {
 
 .code-container {
   flex: 1;
-  min-height: 0;
-  padding: 16px 48px 24px 48px;
+  padding: 20px 48px 28px 48px;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
 }
 
 .code-block {
   background: var(--codebg);
   border-radius: 8px;
-  padding: 26px 32px;
+  padding: 24px 28px;
   font-family: var(--mono);
-  font-size: 15px;
-  line-height: 1.75;
+  font-size: 14.5px;
+  line-height: 1.72;
   color: var(--gray);
   width: 100%;
-  flex: 1;
-  min-height: 0;
   white-space: pre;
-  overflow: auto;
+  overflow: hidden;
   border-left: 3px solid rgba(0,180,216,0.3);
 }
 
@@ -252,11 +250,9 @@ html, body {
 
 .bullet-content {
   flex: 1;
-  min-height: 0;
   padding: 20px 56px 28px 56px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
   overflow: hidden;
 }
 
@@ -266,8 +262,8 @@ html, body {
 }
 
 .bullet-list li {
-  font-size: 19px;
-  line-height: 1.7;
+  font-size: 17px;
+  line-height: 1.65;
   color: var(--gray);
   padding: 5px 0 5px 24px;
   position: relative;
@@ -655,7 +651,7 @@ html, body {
 <span class="line-arrow">    <span class="cy">→</span> Review step = quality gate                      </span>
     You don&#x27;t need cc10x. You need the PRINCIPLES.   </pre>
   </div>
-  <div class="notes" id="notes-14">This is the bridge slide between engineering harnesses and PM practice. &quot;I built cc10x for engineering workflows. But the architecture is the same. Router → intent detection → specialist → quality gate → memory.&quot; PMs can instantiate this in CLAUDE.md without installing anything.</div>
+  <div class="notes" id="notes-14">This is the bridge slide between engineering harnesses and PM practice. &quot;I built cc10x for engineering workflows. But the architecture is the same. Router → intent detection → specialist → quality gate → memory.&quot; PMs can instantiate this in CLAUDE.md without installing anything. &quot;CLAUDE.md is not the only way. It&#x27;s the foundation. Skills are the expertise layer on top.&quot; Skills fire automatically when relevant — prioritization skill activates when you&#x27;re scoring features, user-research skill activates when you&#x27;re synthesizing interviews. You don&#x27;t invoke them, they show up. The official PM plugin&#x27;s `/write-spec` runs a 5-step workflow: 5 questions → pulls from Jira + Notion + Figma → full PRD. That&#x27;s not a template filler. That&#x27;s a compound workflow triggered by one slash command.</div>
 </section>
 
 <section class="slide slide-part" data-index="15">
@@ -861,18 +857,17 @@ html, body {
   <div class="code-container">
     <pre class="code-block"><span class="line-arrow">    4 hours this week <span class="cy">→</span> permanent leverage            </span>
     Hour 1: Upgrade your CLAUDE.md to Level 3
-<span class="line-arrow">      <span class="cy">→</span> Add context loading sequence                  </span>
-<span class="line-arrow">      <span class="cy">→</span> Add agent role definitions                    </span>
-<span class="line-arrow">      <span class="cy">→</span> Add anti-patterns list                        </span>
-<span class="line-arrow">      <span class="cy">→</span> Add slash command definitions                 </span>
-    Hour 2: Build your folder structure
-<span class="line-arrow">      <span class="cy">→</span> context/  notes/  research/  specs/           </span>
-<span class="line-arrow">      <span class="cy">→</span> Move existing context files in               </span>
+<span class="line-arrow">      <span class="cy">→</span> Context loading sequence + agent roles        </span>
+<span class="line-arrow">      <span class="cy">→</span> Anti-patterns + slash command definitions     </span>
+    Hour 2: Install the PM skill stack
+<span class="line-arrow">      <span class="cy">→</span> Official PM plugin (6 slash commands)         </span>
+<span class="line-arrow">      <span class="cy">→</span> menkesu + lenny-skills + assimovt             </span>
+<span class="line-arrow">      <span class="cy">→</span> Test: /product-management:write-spec          </span>
     Hour 3: Wire one compound MCP workflow
 <span class="line-arrow">      <span class="cy">→</span> Pick Workflow 1-5 from Slide 15              </span>
 <span class="line-arrow">      <span class="cy">→</span> Write the prompt. Run it. Save the output.   </span>
-    Hour 4: Build your /spec and /research agents
-<span class="line-arrow">      <span class="cy">→</span> Write them in CLAUDE.md                       </span>
+    Hour 4: Build your folder structure + agents
+<span class="line-arrow">      <span class="cy">→</span> context/ notes/ research/ specs/ decisions/   </span>
 <span class="line-arrow">      <span class="cy">→</span> Test with a real task you have today          </span></pre>
   </div>
   <div class="notes" id="notes-25">Make this concrete. &quot;Hour 1&quot; not &quot;step 1.&quot; They have context from the session. This is the implementation path.</div>
@@ -892,13 +887,15 @@ html, body {
       github.com/yohayetsion/product-org-os
 <span class="line-arrow">    <span class="cy">→</span> pm-studio (CLAUDE.md patterns for PMs)          </span>
       github.com/zoekdestep/pm-studio
-    MCP ecosystem for PMs:
-<span class="line-arrow">    <span class="cy">→</span> Full reference: modules/04-mcp-ecosystem.md     </span>
-      (in the speaker&#x27;s notes repo)
-    Official Anthropic PM Plugin (7,500+ ★)
-<span class="line-arrow">    <span class="cy">→</span> github.com/anthropics/knowledge-work-plugins    </span>
-    Lenny&#x27;s PM Skills Library (86 skills)
-<span class="line-arrow">    <span class="cy">→</span> github.com/refoundai/lenny-skills               </span></pre>
+    Skills &amp; Plugins:
+<span class="line-arrow">    <span class="cy">→</span> Official PM Plugin (7,700+ ★)                   </span>
+      github.com/anthropics/knowledge-work-plugins
+<span class="line-arrow">    <span class="cy">→</span> menkesu/awesome-pm-skills (29 skills, 7 modes)  </span>
+<span class="line-arrow">    <span class="cy">→</span> Lenny&#x27;s 86 PM skills: refoundai/lenny-skills    </span>
+<span class="line-arrow">    <span class="cy">→</span> BMAD PM Agent: bmad-code-org/BMAD-METHOD        </span>
+<span class="line-arrow">    <span class="cy">→</span> Product Org OS: yohayetsion/product-org-os      </span>
+    MCP reference: CC-PM/02-mcp-toolkit.md
+    Full guide: github.com/romiluz13/CC-PM             </pre>
   </div>
   <div class="notes" id="notes-26">Leave this up during Q&amp;A.</div>
 </section>
@@ -910,6 +907,7 @@ html, body {
 <div class="closing-body">in 6 months aren&#x27;t learning new tools.</div>
 <div class="closing-body">They&#x27;re engineering the tools they already have.</div>
 <div class="closing-body">CLAUDE.md that thinks.</div>
+<div class="closing-body">Skills that encode PM craft.</div>
 <div class="closing-body">Sessions with structure.</div>
 <div class="closing-body">MCPs that talk to each other.</div>
 <div class="closing-cta">Four hours this week.</div>

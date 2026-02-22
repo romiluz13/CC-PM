@@ -1003,6 +1003,6 @@ If pressed further to pick one moment within Exercise 5, it is Step 4: the revie
 
 ---
 
-*Previous: [08-real-stories.md](./08-real-stories.md) — Real practitioners, verified sources, and the community resources that support this work.*
+*Previous: [09-real-stories.md](./09-real-stories.md) — Real practitioners, verified sources, and the community resources that support this work.*
 
 *Back to index: [README.md](./README.md)*

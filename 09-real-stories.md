@@ -320,4 +320,4 @@ If that chain does not convince a skeptic, more stories will not either. The iss
 
 ---
 
-*Next: [09-workshop-exercises.md](./09-workshop-exercises.md) — Hands-on exercises to go from reading about Claude Code to actually using it.*
+*Next: [10-workshop-exercises.md](./10-workshop-exercises.md) — Hands-on exercises to go from reading about Claude Code to actually using it.*
