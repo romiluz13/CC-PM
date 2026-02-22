@@ -2,9 +2,58 @@
 
 > **You already use Claude. This is the version that actually knows your product.**
 
-Most PMs use Claude like a smarter search engine — paste context, get output, repeat. Claude Code is different. It reads your files, remembers your product, connects to your tools, and runs multi-step workflows. The gap between an idea and a working prototype, a research question and a sourced analysis, a spec brief and a finished PRD — that gap just got a lot smaller.
+Most PMs use Claude like a smarter search engine — paste context, get output, repeat. Claude Code is different. It reads your files, remembers your product, connects to your tools, and runs multi-step workflows.
 
-This guide is for PMs who are ready to close it.
+**And it has a skill ecosystem specifically built for PM work.** RICE prioritization, continuous discovery, PRD generation, stakeholder communication, competitive analysis — all available as installable skills that activate automatically when you need them.
+
+---
+
+## Two-Minute Quick Start
+
+```bash
+# 1. Install Claude Code
+brew install claude
+
+# 2. Install the official PM plugin (6 slash commands + all the connectors)
+claude plugin marketplace add anthropics/knowledge-work-plugins
+claude plugin install product-management@knowledge-work-plugins
+
+# 3. Create your product brain (copy-paste to start)
+mkdir my-product && cd my-product
+cat > CLAUDE.md << 'EOF'
+# My Product
+
+## Product Vision
+[What you're building, for whom, and why now]
+
+## Core Users
+[Who they are and what they're trying to do]
+
+## Current Quarter
+[Your OKRs or primary initiative]
+
+## My Writing Voice
+[Tone, format preferences, what to avoid]
+EOF
+
+# 4. Start
+claude
+```
+
+You now have a PM plugin with 6 slash commands, a product brain that loads every session, and a foundation for everything else in this guide.
+
+---
+
+## What Makes This Different
+
+This is not a generic "AI for PMs" guide. It covers:
+
+- **The official Anthropic PM plugin** — 6 pre-built slash commands, connectors for Jira/Figma/Amplitude/Intercom/Pendo
+- **PM skills libraries** — Lenny's 86 skills, RICE/Kano frameworks, continuous discovery, Mom Test, Shape Up
+- **PM agent systems** — BMAD's John (Product Manager persona), slgoodrich/agents (multi-specialist routing), NioPD
+- **Cowork** — the non-terminal option (Windows + macOS, visual interface, ships with PM plugin pre-installed)
+- **Verified tool facts** — Figma free/paid truth, PowerPoint CLI situation, Notion performance caveat
+- **Real prompts** — not described, shown. Copy-paste prompts for every use case.
 
 ---
 
@@ -12,158 +61,116 @@ This guide is for PMs who are ready to close it.
 
 | The problem | The old way | With Claude Code |
 |-------------|------------|-----------------|
-| Write a PRD grounded in user pain | 2 hrs of synthesis + drafting | 20 min pipeline: research → JTBD → draft → review |
+| Write a PRD grounded in user pain | 2 hrs of synthesis + drafting | 20 min pipeline: research → JTBD → draft → /devil review |
 | Competitive analysis | 2 days, 5 tabs, one contractor | 34,000 Reddit comments in one session¹ |
-| Answer a data question | Open a Jira ticket, wait 3 days | Ask your database in plain English, get the answer |
-| Understand a feature technically | Schedule a meeting with an engineer | Ask Claude Code in Plan Mode — it reads the code |
-| Write a spec that sounds like you | Generic AI output + heavy editing | CLAUDE.md knows your voice, your template, your product |
-| Build a PowerPoint deck | 3 hours in Slides | Generate from your research files |
+| Answer a data question | Open a Jira ticket, wait 3 days | Ask your database in plain English |
+| Prioritize a backlog | Gut feel + RICE spreadsheet | RICE skill activates automatically, scores with reasoning |
+| Understand a feature technically | Schedule an eng meeting | Plan Mode — reads the code, no changes |
+| Synthesize 200 interviews | 2-week analysis project | User research synthesis skill in one session |
+| Write a spec that sounds like you | Generic AI + heavy editing | CLAUDE.md knows your voice, template, product |
 
-¹ Monday.com PM, one session. [Full story →](08-real-stories.md)
-
----
-
-## The One Thing That Changes Everything
-
-**`CLAUDE.md`** — a file you create once, in your project folder. Claude Code reads it automatically at the start of every session.
-
-It contains your product vision, your users, your OKRs, your writing voice. Write it once. After that, Claude Code never needs you to explain your product again.
-
-```markdown
-# ShopFlow — Product Context
-
-## Product Vision
-ShopFlow helps small e-commerce operators manage inventory
-without hiring a dedicated ops person. Primary users: founders
-running stores with 50-500 SKUs.
-
-## Core Users
-Alex (Founder/Operator): primary pain = unexpected stockouts.
-
-## Current Quarter
-Q2 2026: Reduce stockout incidents by 40%.
-Key bet: automated reorder suggestions.
-
-## My Writing Voice
-Direct. No jargon. Bullet-heavy. Always include acceptance criteria.
-```
-
-That's Level 1. There's a [Level 3 version](03-claude-md-for-pms.md) that defines specialist agent roles, context loading sequences, and response rules. Most PMs see a step-change in output quality at Level 3.
+¹ Monday.com PM, one session. [Full story →](09-real-stories.md)
 
 ---
 
-## Where to Start
+## Start Here — In Order
 
-**This week — in order:**
+### This week:
 
 **1 → [Getting Started](01-getting-started.md)**
-Install in 5 minutes. Run your first session. Learn Plan Mode — the safe, read-only way to understand your codebase without changing anything.
+Install in 5 minutes. First session. Plan Mode. Claude Cowork (the non-terminal option).
 
-**2 → [CLAUDE.md for PMs](03-claude-md-for-pms.md)**
-Write your product brain. Copy-paste the Level 3 template. Everything else in this guide builds on this file.
+**2 → [MCP Toolkit](02-mcp-toolkit.md)**
+Connect Jira, Linear, Notion, Figma, Amplitude. Verified Figma free/paid answer.
 
-**3 → [Connect your tools](02-mcp-toolkit.md)**
-Jira, Linear, Notion, Figma, Amplitude. Pick one and connect it. Takes 15 minutes. Verified installation steps for each.
+**3 → [CLAUDE.md for PMs](03-claude-md-for-pms.md)**
+Your product brain. Level 1 → Level 3 templates. The file that changes everything.
 
----
-
-**Once you're up and running:**
-
-**4 → [The 9 PM Use Cases](04-pm-use-cases.md)**
-PRD writing, competitive research, data analysis, prototyping, technical exploration, roadmap strategy. Every use case has real prompts you can run today.
-
-**5 → [Compound Workflows](05-compound-mcp-workflows.md)**
-When your tools talk to each other. Sprint health checks. Competitive intelligence pipelines. Release impact analysis. Full copy-paste prompts for all five.
-
-**6 → [Orchestration Patterns](06-orchestration-for-pms.md)**
-Sequential pipelines, parallel research, specialist + synthesizer. How to structure sessions so they produce compound intelligence, not just answers.
+**4 → [Skills, Plugins & PM Agents](04-skills-and-plugins.md)** ← The centerpiece
+The official PM plugin. BMAD's PM agent. Lenny's 86 skills. The PRD Builder. How to write your own skill in 15 minutes. The full skill marketplaces.
 
 ---
 
-**Reference:**
+### Once you're running:
 
 | File | What's in it |
 |------|-------------|
-| [Tools & Integrations](07-tools-integrations.md) | Figma free/paid truth. PowerPoint situation. Data tools. |
-| [Real Stories](08-real-stories.md) | 7 verified practitioners: names, sources, numbers. |
-| [Workshop Exercises](09-workshop-exercises.md) | 10 exercises for teams. Timing + facilitator guide. |
-| [Cheat Sheet](10-cheat-sheet.md) | Print this. Every command, MCP, agent role on one page. |
+| [05 — PM Use Cases](05-pm-use-cases.md) | 9 use cases, copy-paste prompts, real people |
+| [06 — Compound MCP Workflows](06-compound-mcp-workflows.md) | Sprint health check, competitive pipeline, release impact — full prompts |
+| [07 — Orchestration](07-orchestration-for-pms.md) | Agent roles, pipelines, session patterns |
+| [08 — Tools & Integrations](08-tools-integrations.md) | Figma, PowerPoint, Google Slides, data tools |
+| [09 — Real Stories](09-real-stories.md) | 7 verified practitioners, names and numbers |
+| [10 — Workshop Exercises](10-workshop-exercises.md) | 10 team exercises, facilitator guide |
+| [11 — Cheat Sheet](11-cheat-sheet.md) | Print this. One page. Everything. |
+
+---
+
+## The PM Skill Stack
+
+```bash
+# Week 1: Official plugin (slash commands + all connectors)
+claude plugin marketplace add anthropics/knowledge-work-plugins
+claude plugin install product-management@knowledge-work-plugins
+
+# Week 2: PM frameworks
+claude plugin marketplace add refoundai/lenny-skills       # 86 skills from Lenny's Podcast
+claude plugin marketplace add assimovt/productskills        # Mom Test, Shape Up, JTBD
+
+# Week 3: Full PM agent workflows
+npx bmad-method install                                     # BMAD PM Agent (PRD + epics)
+claude plugin marketplace add deanpeters/Product-Manager-Skills  # 42 skills
+```
+
+After Week 1: `/product-management:write-spec`, `/product-management:competitive`, RICE scoring, stakeholder updates — all available.
 
 ---
 
 ## The Tools You'll Connect
 
 ```
-PROJECT MANAGEMENT        ANALYTICS
-──────────────────        ─────────
-Jira MCP           80★   Amplitude   (official Anthropic)
-Linear MCP        129★   Google Analytics         177★
-Notion MCP        206★   Mixpanel                  19★
-GitHub Issues            Power BI                 200★
+PROJECT MANAGEMENT                ANALYTICS
+──────────────────                ─────────
+Jira MCP               80★        Amplitude   (official)
+Linear MCP            129★        Google Analytics     177★
+Notion MCP            206★        Mixpanel              19★
+GitHub Issues                     Power BI             200★
 
-DESIGN                    RESEARCH
-──────────                ────────
-Figma MCP                 Bright Data   (scrape anything public)
-  free: remote server     PowerPoint    (tfriedel/claude-office-skills)
-  paid: desktop server    NotebookLM    (jacob-bd/notebooklm-mcp-cli)
-```
-
-**Install the official Anthropic PM plugin** — 6 pre-built PM slash commands:
-```bash
-/plugin install product-management
-# Gives you:
-# /pm:prd-create  /pm:feature-spec  /pm:user-story
-# /pm:metrics-framework  /pm:competitive  /pm:roadmap-review
+DESIGN                            RESEARCH
+──────────                        ────────
+Figma (remote server: FREE)       Bright Data  (scrape anything)
+Figma (desktop: paid Dev seat)    skills.sh    (PM skill library)
 ```
 
 ---
 
 ## Real People. Real Results.
 
-> *"Where it used to be about influencing future changes through complex collaboration, it now revolves a lot around influencing through **building and creating**."*
->
-> **Ondrej Machart** — Head of Product (non-engineer). Published an iOS app solo. Built TinyStakeholders.com (5,000+ readers). 13 projects total.
-> [Full story →](08-real-stories.md)
+> *"Where it used to be about influencing through collaboration, it now revolves around **influencing through building and creating**."*
+> — **Ondrej Machart**, Head of Product. Non-engineer. Published an iOS app solo. 13 projects.
 
----
-
-> *"I went from asking my data team for reports to exploring data myself in real time."*
->
-> **Dylan Colon** — PM at UKG
-
----
-
-> *"We just want to make it much easier for non-programmers."*
->
-> **Boris Cherny** — Anthropic, on launching Cowork (January 2026)
-
----
-
-| Signal | Number |
+| Metric | Number |
 |--------|--------|
-| Time saved on competitive intel | **85%** (Reza Rezvani, enterprise PM) |
-| Reddit comments analyzed in one session | **34,000** (Monday.com PM) |
-| Anthropic's official PM plugin | **7,500 ★** on GitHub |
-| Most-starred PM Claude Code course | **1,437 ★** (Carl Vellotti) |
+| Time saved on competitive intel | **85%** (Reza Rezvani) |
+| Reddit comments in one session | **34,000** (Monday.com PM) |
+| Official Anthropic PM plugin | **7,700★** on GitHub |
+| Skills in Lenny's library | **86** from top PM interviews |
+| Skills in antigravity collection | **868+** across 18 AI agents |
 
 ---
 
 ## The Honest Answers
 
 **"Do I need to know how to code?"**
-No. Plan Mode lets you explore and understand your codebase without touching it. The prompts in this guide are written in plain English. The skill you need is evaluating whether output is good — which is already your job.
+No. Skills fire automatically. Plan Mode is read-only. Prompts are plain English. Your skill is evaluating output — which you already do.
 
 **"Does the Figma MCP cost extra?"**
-The remote server is free on all Figma plans, including the free tier. The desktop server requires a paid Dev seat (~$12-35/mo). There's also a free community option that works with any plan. [Details →](07-tools-integrations.md#figma)
+Remote server is free on all Figma plans. Desktop server requires a paid Dev seat. [Details →](08-tools-integrations.md)
 
-**"Can I generate PowerPoints?"**
-Not natively in Claude Code CLI — that feature only shipped in Claude Desktop/Web. There's a community solution that works well. [Full workflow →](07-tools-integrations.md#powerpoint)
+**"I don't want to use the terminal."**
+Use Claude Cowork. Same model, same skills, visual interface. Ships with PM plugin pre-installed. Available on all platforms as of Feb 2026. [Details →](04-skills-and-plugins.md)
 
-**"My company's AI policy is strict. Can I still use this?"**
-Start with CLAUDE.md and no MCP connections. That's pure API text processing — same data path as Claude.ai, which your company likely already approved. Add integrations one at a time as you verify each is within policy. [Full breakdown →](01-getting-started.md)
-
-**"I only have 30 minutes. Where do I start?"**
-Write your CLAUDE.md. Just three sections: product vision, your core users, this quarter's focus. That file pays for the 30 minutes every single day after.
+**"Where do I start if I only have 30 minutes?"**
+Install the PM plugin + write 3 sections of CLAUDE.md. That's it. 30 minutes, pays back every day.
 
 ---
 
@@ -171,34 +178,34 @@ Write your CLAUDE.md. Just three sections: product vision, your core users, this
 
 ```
 CC-PM/
-├── README.md                     ← You're here
-├── 01-getting-started.md         ← Install, Plan Mode, first session
-├── 02-mcp-toolkit.md             ← Every PM MCP, verified
-├── 03-claude-md-for-pms.md       ← Level 1 → Level 3 templates
-├── 04-pm-use-cases.md            ← 9 use cases, real prompts
-├── 05-compound-mcp-workflows.md  ← 5 full multi-tool workflows
-├── 06-orchestration-for-pms.md   ← Pipelines, agents, session patterns
-├── 07-tools-integrations.md      ← Figma, PowerPoint, data tools
-├── 08-real-stories.md            ← 7 verified PM stories + community
-├── 09-workshop-exercises.md      ← 10 team exercises, facilitator guide
-├── 10-cheat-sheet.md             ← One-page reference, print-ready
-└── presentation.html             ← Slide deck: open in Chrome
+├── README.md                    ← You're here
+├── 01-getting-started.md        ← Install, Plan Mode, Cowork intro
+├── 02-mcp-toolkit.md            ← Every PM MCP, verified
+├── 03-claude-md-for-pms.md      ← Level 1 → Level 3 templates
+├── 04-skills-and-plugins.md     ← The PM skill ecosystem ← START HERE
+├── 05-pm-use-cases.md           ← 9 use cases, real prompts
+├── 06-compound-mcp-workflows.md ← 5 multi-tool workflows, full prompts
+├── 07-orchestration-for-pms.md  ← Pipelines, agents, session patterns
+├── 08-tools-integrations.md     ← Figma, PowerPoint, data tools
+├── 09-real-stories.md           ← 7 verified PM stories + community
+├── 10-workshop-exercises.md     ← 10 team exercises, facilitator guide
+├── 11-cheat-sheet.md            ← One page. Print it.
+└── presentation.html            ← Slide deck: open in Chrome
 ```
-
-**Bonus:** [`presentation.html`](presentation.html) is the full session slide deck. Open in Chrome → navigate with arrow keys → press `N` for speaker notes.
 
 ---
 
-## Community & Further Reading
+## Further Reading
 
 | Resource | What it is | Stars |
 |----------|-----------|-------|
-| [prodmgmt.world/claude-code](https://prodmgmt.world/claude-code) | 180+ PM skills, used by 500+ PMs | — |
-| [ccforpms.com](https://ccforpms.com) | Interactive PM course by Carl Vellotti | — |
-| [refoundai/lenny-skills](https://github.com/refoundai/lenny-skills) | 86 skills from Lenny's Podcast | 244★ |
+| [prodmgmt.world/claude-code](https://prodmgmt.world/claude-code) | 180+ PM skills | — |
+| [ccforpms.com](https://ccforpms.com) | Interactive PM course | — |
+| [refoundai/lenny-skills](https://github.com/refoundai/lenny-skills) | 86 PM skills from Lenny's Podcast | 244★ |
 | [deanpeters/Product-Manager-Skills](https://github.com/deanpeters/Product-Manager-Skills) | 42 PM skills | 132★ |
-| [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) | Official Anthropic PM plugin | 7,500★ |
-| [carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course) | Most-starred PM Claude Code resource | 1,437★ |
+| [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) | Official Anthropic plugins (11 roles) | 7,700★ |
+| [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) | PM + dev full lifecycle agent system | active |
+| [skills.sh](https://skills.sh) | Open PM skill ecosystem | — |
 | [Anthropic free course](https://anthropic.skilljar.com/claude-code-in-action) | Claude Code in Action | — |
 
 ---
