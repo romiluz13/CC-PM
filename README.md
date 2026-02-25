@@ -2,6 +2,21 @@
 
 > **You already use Claude. This is the version that actually knows your product.**
 
+---
+
+> ### Here for the session?
+> If you're reading this as pre-session background — welcome. Use this repo to understand the concepts.
+>
+> **Skip the Quick Start below.** In the session we'll run **cc-p4p** — a PM orchestration plugin that does research, spec writing, roadmapping, and stakeholder comms from a single natural-language prompt.
+>
+> **Before the session, do these two things:**
+> 1. Install Claude Code: `npm install -g @anthropic-ai/claude-code`
+> 2. Read: [Getting Started](01-getting-started.md) · [CLAUDE.md for PMs](03-claude-md-for-pms.md) · [Cheat Sheet](11-cheat-sheet.md)
+>
+> The demo repo with everything you'll run live: **[github.com/romiluz13/p4p-demo](https://github.com/romiluz13/p4p-demo)**
+
+---
+
 Most PMs use Claude like a smarter search engine — paste context, get output, repeat. Claude Code is different. It reads your files, remembers your product, connects to your tools, and runs multi-step workflows.
 
 **And it has a skill ecosystem specifically built for PM work.** RICE prioritization, continuous discovery, PRD generation, stakeholder communication, competitive analysis — all available as installable skills that activate automatically when you need them.
