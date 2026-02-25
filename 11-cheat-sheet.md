@@ -197,6 +197,10 @@ Rule 3: Persist decisions, not reasoning.
 ## PM Skills Libraries
 
 ```bash
+# cc-p4p — PM orchestration (research → spec → roadmap → comms → metrics)
+/plugin marketplace add romiluz13/cc-p4p
+/plugin install cc-p4p@romiluz13
+
 # Official Anthropic (7,500★ — 6 slash commands)
 /plugin install product-management
 
@@ -242,6 +246,8 @@ claude --dangerouslySkipPermissions=false
 | PowerPoint skills | github.com/tfriedel/claude-office-skills |
 | Anthropic Docs | code.claude.com/docs/en/best-practices |
 | Free PM Course | anthropic.skilljar.com/claude-code-in-action |
+| cc-p4p (PM orchestration) | github.com/romiluz13/cc-p4p |
+| cc-p4p demo + prompts | github.com/romiluz13/p4p-demo |
 | cc10x (dev orchestration) | github.com/romiluz13/cc10x |
 
 ---

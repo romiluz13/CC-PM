@@ -23,6 +23,36 @@ CLAUDE.md tells Claude about *your product*. Skills teach Claude *how to do PM w
 
 ---
 
+## cc-p4p — PM Orchestration Plugin
+
+**Repo:** github.com/romiluz13/cc-p4p
+**Install:**
+```bash
+/plugin marketplace add romiluz13/cc-p4p
+/plugin install cc-p4p@romiluz13
+```
+
+cc-p4p is a full PM orchestration system built on Claude Code. You write a natural-language PM request — it detects intent, routes to the right workflow, runs a specialist agent, writes structured findings to persistent memory, and validates every handoff with a machine-readable Router Contract.
+
+**The 5 workflows:**
+
+| Workflow | Trigger keywords | What it produces |
+|----------|-----------------|-----------------|
+| RESEARCH | research, competitive, analyze, what do customers | Competitive synthesis with evidence grades, personas → `docs/research/` |
+| SPEC | spec, PRD, write requirements, what should we build | Full PRD with P0/P1/P2 cut, acceptance criteria, success metrics → `docs/specs/` |
+| ROADMAP | prioritize, roadmap, Q3, RICE, trade-off | RICE-scored backlog, capacity math, dependency map → `docs/roadmap/` |
+| COMMUNICATE | write a message, talking points, stakeholder update | Audience-matched comms — never promises unconfirmed dates → `docs/comms/` |
+| METRICS | success metrics, KPIs, how will we measure | Leading + lagging indicators, guardrails, account tracking → `docs/metrics/` |
+
+**What makes it different from the Official Anthropic PM Plugin:**
+- **Intent detection** — no slash commands. "I need to understand why enterprise customers churn" routes to RESEARCH automatically.
+- **Persistent memory** — writes structured findings to `.claude/cc-p4p/insights.md` that the next workflow reads automatically. The spec quotes the research. The roadmap reads the spec. No copy-pasting between sessions.
+- **Router Contract** — every workflow ends with a machine-readable YAML block that tells the system what was decided, what's blocked, and what can run next.
+
+**Live demo + prompts:** github.com/romiluz13/p4p-demo — full Monday.com competitive crisis scenario, real outputs included.
+
+---
+
 ## The Official Anthropic PM Plugin — What It Actually Does
 
 **Repo:** github.com/anthropics/knowledge-work-plugins
